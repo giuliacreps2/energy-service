@@ -1,6 +1,7 @@
 import { use, useEffect, useRef, useState } from "react";
+import { useNavigate } from 'react-router-dom'
 
-function Register({ setLogin }){
+function Register(){
       const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -10,6 +11,7 @@ function Register({ setLogin }){
     avatar: "",
     role: "user"
   })
+    const navigate = useNavigate()
   const toastRef = useRef(null)
   const [registered,setRegisetred] = useState(false)
   const [errors,setErrors] = useState("")
@@ -31,6 +33,9 @@ function Register({ setLogin }){
             setErrors("")
             createdUser()
             setId(data.id)
+            // setTimeout(() => {
+            //  navigate('/login')
+            // }, 2000);
         })
         .catch((err)=>{
             setErrors(err.message)
@@ -184,18 +189,9 @@ function Register({ setLogin }){
   Hai già un account?{" "}
   <span 
     className="text-blue-600 cursor-pointer hover:underline"
-    onClick={() => setLogin(true)}
+    onClick={() => navigate('/login')}
   >
     Accedi
-  </span>
-</p>
-<p className="text-center text-sm">
-  Non hai un account?{" "}
-  <span 
-    className="text-blue-600 cursor-pointer hover:underline"
-    onClick={() => setLogin(false)}
-  >
-    Registrati
   </span>
 </p>
       </div>

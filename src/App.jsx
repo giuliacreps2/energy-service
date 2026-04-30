@@ -1,18 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import Register from './components/Register'
 import Login from './components/Login'
+import Landing from './components/Landing'
 
 function App() {
-  const [login, setLogin] = useState(false)
-
   return (
-    <>
-    {login ? <Login setLogin={setLogin}/> : <Register setLogin={setLogin}/>}
-    </>
+    <Routes>
+      <Route path="/"         element={<Landing />} />
+      <Route path="/login"    element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
   )
 }
 

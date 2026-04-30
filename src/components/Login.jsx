@@ -1,12 +1,14 @@
 import { useState,useRef } from "react";
+import { useNavigate } from 'react-router-dom'
 
-function Login({ setLogin }) {
+function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   })
   const [errors, setErrors] = useState("")
   const toastRef = useRef(null)
+   const navigate = useNavigate()
 
   const fetchLogin = () => {
     fetch("http://localhost:5003/auth/login", {
@@ -67,20 +69,11 @@ function Login({ setLogin }) {
             </button>
             <h2 className="text-red-600">{errors}</h2>
           </form>
-                  <p className="text-center text-sm">
-  Hai già un account?{" "}
-  <span 
-    className="text-blue-600 cursor-pointer hover:underline"
-    onClick={() => setLogin(true)}
-  >
-    Accedi
-  </span>
-</p>
 <p className="text-center text-sm">
   Non hai un account?{" "}
   <span 
     className="text-blue-600 cursor-pointer hover:underline"
-    onClick={() => setLogin(false)}
+    onClick={() => navigate('/register')}
   >
     Registrati
   </span>
