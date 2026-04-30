@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function Filter() {
    const navigate = useNavigate()
@@ -55,7 +56,7 @@ const[filtri, setFiltri] = useState({
 
     setLoad(false)
 
-    fetch(`http://localhost:5003/clients/details?${params}`, {
+    fetch(`http://localhost:3001/clients/details?${params}`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem('token')}`
