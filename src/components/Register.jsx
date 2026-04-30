@@ -11,7 +11,7 @@ function Register() {
   const [errors, setErrors] = useState("")
 
   const fetchTest = () => {
-    fetch("http://localhost:5003/auth/register", {
+    fetch(`${import.meta.env.VITE_API_URL}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
