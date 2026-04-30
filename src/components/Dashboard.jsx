@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Filter from './Filter'
  
 export default function Dashboard() {
   const navigate = useNavigate()
@@ -37,6 +38,8 @@ export default function Dashboard() {
     <div className="dash">
   <div className="dash__bg" />
   <div className="dash__overlay" />
+
+  <Filter/>
 
   <nav className="dash__nav">
     <span className="dash__logo">Energy Services</span>
