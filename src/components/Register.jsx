@@ -11,7 +11,7 @@ function Register() {
   const [errors, setErrors] = useState("")
 
   const fetchTest = () => {
-    fetch("http://localhost:5003/auth/register", {
+    fetch("http://localhost:3001/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)

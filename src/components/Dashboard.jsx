@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
  
 export default function Dashboard() {
   const navigate = useNavigate()
-  const url = "http://localhost:5003/clients/details"
+  const url = "http://localhost:3001/clients/details"
  
   const [error, setError] = useState("")
   const [load, setLoad] = useState(false)
@@ -42,7 +42,7 @@ export default function Dashboard() {
     <span className="dash__logo">Energy Services</span>
     <div className="dash__nav-right">
       <span className="dash__nav-label">Dashboard</span>
-      <button className="dash__logout" onClick={() => { navigate('/') }}>
+      <button className="dash__logout" onClick={() => { navigate('/registerB2B') }}>
         Aggiungi cliente
       </button>
       <button className="dash__logout" onClick={() => { navigate('/login') }}>

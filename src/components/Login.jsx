@@ -8,7 +8,7 @@ function Login() {
   const navigate = useNavigate()
 
   const fetchLogin = () => {
-    fetch("http://localhost:5003/auth/login", {
+    fetch("http://localhost:3001/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
