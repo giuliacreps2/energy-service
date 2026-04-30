@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
  
 export default function Dashboard() {
   const navigate = useNavigate()
-  const url = "http://localhost:3001/clients/details"
+  const url = `${import.meta.env.VITE_API_URL}/clients/details`
  
   const [error, setError] = useState("")
   const [load, setLoad] = useState(false)

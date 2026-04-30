@@ -48,7 +48,7 @@ function Register() {
       contactPhone: Number(formData.contactPhone)
     };
 
-    fetch("http://localhost:3001/auth/register", {
+    fetch(`${import.meta.env.VITE_API_URL}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
